@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .circle {
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="slidecontainer">
+        <input type="range" min="1" max="15000" value="15000" class="slider1" id="myRange1">
+        <p>To: <span id="startprice"></span></p>
+    </div>
+
+
+
+    <div class="circle" id="circle" price="1000"></div>
+
+    <div id="argo" price="8999">
+        <p>
+            Argo kutna garnitura s ležajem lijeva 300x218x82 cm
+        </p>
+    </div>
+
+    <div id="herris" price="11999.99">
+        <p>
+            Harris kutna garnitura s ležajem mint lijeva 250x210x86 cm
+        </p>
+    </div>
+
+    <div id="macao" price="7999.99">
+        <p>
+            Macao kutna garnitura s ležajem i spremnikom sivo/crna 365x212x72/90 cm
+        </p>
+    </div>
+
+    <script>
+        var slider1 = document.getElementById("myRange1");
+        var output1 = document.getElementById("startprice");
+        let value1;
+        let price1 = document.getElementById("argo").getAttribute("price");
+        let p1 = parseInt(price1);
+        let price2 = document.getElementById("herris").getAttribute("price");
+        let p2 = parseInt(price2);
+        let price3 = document.getElementById("macao").getAttribute("price");
+        let p3 = parseInt(price3);
+        output1.innerHTML = slider1.value;
+        if (slider1.value > p1) {
+            document.getElementById("argo").style.display = "block";
+        }
+        if (slider1.value > p2) {
+            document.getElementById("herris").style.display = "block";
+        }
+        if (slider1.value > p3) {
+            document.getElementById("macao").style.display = "block";
+        }
+        slider1.oninput = function () {
+            output1.innerHTML = this.value;
+            value1 = this.value;
+            if (slider1.value < p1) {
+                document.getElementById("argo").style.display = "none";
+            }
+            else {
+                document.getElementById("argo").style.display = "block";
+            }
+            if (slider1.value < p2) {
+                document.getElementById("herris").style.display = "none";
+            }
+            else {
+                document.getElementById("herris").style.display = "block";
+            }
+            if (slider1.value < p3) {
+                document.getElementById("macao").style.display = "none";
+            }
+            else {
+                document.getElementById("macao").style.display = "block";
+            }
+        }
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
