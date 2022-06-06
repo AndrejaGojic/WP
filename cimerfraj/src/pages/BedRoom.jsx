@@ -1,16 +1,15 @@
 import React from 'react'
-import Categories from '../components/Categories'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const Home = () => {
+
+const BedRoom = () => {
   return (
     <div>
-        <Navbar/>
-        <Categories/>
-        <Footer/>
+    <Navbar/>
+    <Footer/>
     </div>
   )
 }
 
-export default Home
+export default BedRoom

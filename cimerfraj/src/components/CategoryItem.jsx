@@ -25,12 +25,14 @@ const Info = styled.div`
 const Title = styled.h1`
     margin-bottom: 20px;
     margin-left: 10px;
-    color: brown;
+    color: black;
 `;
 const Button = styled.button`
     border: none;
-    padding: 10px;
-    background-color: white;
+    padding: 20px;
+    width: 100%;
+    background-color: #91959c;
+    cursor: pointer;
 `;
 
 const CategoryItem = ({item}) => {
@@ -39,7 +41,7 @@ const CategoryItem = ({item}) => {
         <Image src={item.img}/>
         <Info>
             <Title>{item.title}</Title>
-            <Button><Link to = "/">KUPI SADA</Link></Button>
+            <Link to = {item.path}><Button><b>KUPI SADA</b></Button></Link>
         </Info>
     </Container>
   )

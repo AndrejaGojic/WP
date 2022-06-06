@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import SearchIcon from '@mui/icons-material/Search';
-import { Search } from '@mui/icons-material';
-import Badge from '@mui/material/Badge';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import {Link} from "react-router-dom";
+import { useAuth } from '../pages/Login';
+import Nav from 'react-bootstrap/Nav'
 
 const Container = styled.div`
-  height: 60px;
+  height: 100px; 
+  background-color: #91959c;
 `;
 
 const Left = styled.div`
@@ -20,14 +19,6 @@ const Language = styled.span`
     cursor: pointer;
 `;
 
-const SearchContainer = styled.div`
-    border: 1px solid lightgray;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
-`;
-
 const Input = styled.input`
     border:none;
 `
@@ -37,8 +28,10 @@ const Center = styled.div`
     text-align: center;
 `
 
-const Logic = styled.h1`
+const Logic = styled.div`
     font-weight: bold;
+    font-size: 60px;
+    color: black
 `;
 const Right = styled.div`
     flex: 1;
@@ -50,7 +43,9 @@ const MenuItem = styled.div`
     font-size : 14px;
     cursor: pointer;
     margin-left: 25px;
-`
+    color: black;
+    font-weight: bold;
+`;
 
 
 const Wrapper = styled.div`
@@ -59,30 +54,19 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 `;
+
+
 const Navbar = () => {
   return (
     <Container>
        <Wrapper>
            <Left>
                <Language>HR</Language>
-               <SearchContainer>
-                   <Input/>
-                   <Search style={{color:"gray", fontSize: 16}}/>
-               </SearchContainer>
            </Left>
-           <Center><Logic>CimerFraj</Logic></Center>
+           <Center><Link style={{textDecoration: 'none'}} to = "/"><Logic>CimerFraj</Logic></Link></Center>
            <Right>
-               <MenuItem>
-                    <Link to = "/login">PRIJAVI SE</Link>
-               </MenuItem>
-               <MenuItem>
-                    <Link to = "/register">REGISTRIRAJ SE</Link>
-               </MenuItem>
-               <MenuItem>
-                <Badge badgeContent={4} color="primary">
-                     <ShoppingCartOutlinedIcon color="action" />
-                </Badge>
-               </MenuItem>
+           <Link style={{textDecorationColor: 'black'}} to = "/login"><MenuItem>PRIJAVI SE</MenuItem></Link>
+           <Link style={{textDecorationColor: 'black'}} to = "/register"><MenuItem>REGISTRIRAJ SE</MenuItem></Link>
            </Right>
        </Wrapper>
     </Container >

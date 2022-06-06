@@ -1,5 +1,18 @@
 import styled from "styled-components"
 
+import { Link } from "react-router-dom";
+import Home from "./Home";
+
+import { useState,useEffect } from "react";
+
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../fire";
+
 const Container = styled.div`
     width: 100vw;
     height: 100vh;
@@ -56,7 +69,54 @@ const Button = styled.button`
     margin-bottom: 20px;
     `;
 
-const Register = () => {
+    function Register () {
+
+  
+        const [registerEmail, setRegisterEmail] = useState("");
+        const [registerPassword, setRegisterPassword] = useState("");
+        const [loginEmail, setLoginEmail] = useState("");
+        const [loginPassword, setLoginPassword] = useState("");
+      
+        const [user, setUser] = useState({});
+      
+        useEffect(() => {
+          onAuthStateChanged(auth, (currentUser) => {
+              setUser(currentUser);
+          });
+      
+        }, [])
+      
+        const register = async () => {
+          try {
+            const user = await createUserWithEmailAndPassword(
+              auth,
+              registerEmail,
+              registerPassword
+            );
+            console.log(user);
+          } catch (error) {
+            console.log(error.message);
+          }
+        };
+      
+        const login = async () => {
+          try {
+            const user = await signInWithEmailAndPassword(
+              auth,
+              loginEmail,
+              loginPassword
+            );
+            console.log(user);
+          } catch (error) {
+            console.log(error.message);
+          }
+        };
+      
+        const logout = async () => {
+          await signOut(auth);
+        };
+
+
   return (
     <Container>
       <Wrapper>
@@ -64,20 +124,22 @@ const Register = () => {
               <b>KREIRAJ NOVI RAČUN</b>
           </Title>
           <Form>
-              <Input placeholder ='Ime'/>
-              <Input placeholder ='Prezime'/>
-              <Input placeholder ='E-mail adresa'/>
-              <Input placeholder ='Lozinka'/>
-              <Input placeholder ='Ponovljena lozinka'/>
-              <Input placeholder ='Poštanski broj'/>
-              <Input placeholder ='Grad'/>
-              <Input placeholder ='Ulica'/>
-              <Input placeholder ='Kućni broj'/>
+              
+              <Input placeholder ='E-mail adresa'  onChange={(event) => {
+            setRegisterEmail(event.target.value);
+          }}/>
+              <Input placeholder ='Lozinka'   onChange={(event) => {
+            setRegisterPassword(event.target.value);
+          }}/>
+              
           </Form>
           <Agreement>
               Kreitanjem ovog računa, suglasan/a sam s korištenjem mojih podataka u skladu s <b>POLITIKOM PRIVATNOSTI</b>
           </Agreement>
-          <Button>KREIRAJ</Button>
+          <Button onClick={register}><Link to = "/bravo">KREIRAJ</Link></Button>
+          <Button onClick={logout}> Odjavi se </Button>
+          <Link to="/login">Logiraj se</Link>
+          
       </Wrapper>
     </Container>
   )
