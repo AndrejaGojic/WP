@@ -29,7 +29,7 @@ const Title = styled.h1`
     margin-left: 10px;
     color: black;
 `;
-const Disc = styled.div`
+const Desc = styled.div`
     font-size: 20px;
     margin-left: 10px;
 `;
@@ -40,17 +40,25 @@ const Price = styled.div`
     margin-left: 10px;
 `;
 
+const value = parseInt(window.name);
+
 const Product = ({item}) => {
-    return (
-        <Container>
-            <Image src={item.img}/>
-            <Info>
-                <Title>{item.name}</Title>
-                <Disc>{item.description}</Disc>
-                <Price>{item.price}</Price>
-            </Info>
-        </Container>
-      )
-}
+    console.log(window.name)
+    if(item.price >= parseInt(window.name)){
+        return (
+            <Link to = {`/product/${item.id}`}>
+            <Container>
+                <Image src={item.img}/>
+                <Info>
+                    <Title>{item.name}</Title>
+                    <Desc>{item.description}</Desc>
+                    <Price>{item.price}</Price>
+                </Info>
+            </Container>
+            </Link>
+          )
+    }
+    }
+
 
 export default Product

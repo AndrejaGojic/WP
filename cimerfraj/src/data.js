@@ -20,19 +20,19 @@ export const categories1 = [
 ];
 export const categories2 = [
     {
-        id: 1,
+        id: 4,
         img: "https://www.thespruce.com/thmb/Xn00XKImRojvmtVi104XX0RAz3Y=/640x640/filters:no_upscale():max_bytes(150000):strip_icc()/SimpleNordicNursery-ea8177d4262342b5a56c6bd416248be8.jpg",
         title: "Dječja soba",
         path: "/kids"
     },
     {
-        id: 2,
+        id: 5,
         img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/kitchen-decor-ideas-1580491833.jpg?crop=1.00xw:0.669xh;0,0.151xh&resize=640:*",
         title: "Kuhinja",
         path: "/kitchen",
     },
     {
-        id: 3, 
+        id: 6, 
         img: "https://newzgate.net/wp-content/uploads/sites/498/2022/02/photo-1584622650111-993a426fbf0a.jpg",
         title: "Kupaonica",
         path: "/bathroom",

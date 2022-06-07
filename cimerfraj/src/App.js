@@ -8,6 +8,7 @@ import BedRoom from "./pages/BedRoom"
 import DiningRoom from "./pages/DiningRoom"
 import LivingRoom from "./pages/LivingRoom"
 import Bravo from "./pages/Bravo";
+import SingleProduct from "./pages/SingleProduct";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import {
@@ -80,6 +81,7 @@ function App() {
                 <Route path='/diningroom' element= {<DiningRoom/>}/>
                 <Route path='/livingroom' element= {<LivingRoom/>}/>
                 <Route path='/bravo' element= {<Bravo/>}/>
+                <Route path="/product/:id" element={<SingleProduct/>}/>
         </Routes>
         <h4> User Logged In: </h4>
       {user?.email}
