@@ -1,69 +1,91 @@
-import React, { useState, useEffect } from "react";
-import styled from 'styled-components'
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import firebase from '../firebase';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import CartItem from '../components/CartItem';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { auth } from '../fire';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
   } from "firebase/auth";
-import { auth } from "../fire";
-  
 
-const Container = styled.div`
-  height: 100px; 
-  background-color: #91959c;
+
+
+
+const Container= styled.div`
+
 `;
 
-const Left = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-`
-const Language = styled.span`
-    font-size: 14px;
-    cursor: pointer;
+const Wrapper= styled.div`
+    padding: 20px;
 `;
 
-const Input = styled.input`
-    border:none;
-`
-
-const Center = styled.div`
-    flex: 1;
+const Title= styled.h1`
+    font-weight: 300;
     text-align: center;
-`
-
-const Logic = styled.div`
-    font-weight: bold;
-    font-size: 60px;
-    color: black
-`;
-const Right = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-`
-const MenuItem = styled.div`
-    font-size : 14px;
-    cursor: pointer;
-    margin-left: 25px;
-    color: black;
-    font-weight: bold;
 `;
 
-
-const Wrapper = styled.div`
-    padding: 10px 20px;
+const Top= styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
+`;
+
+const TopButton= styled.button`
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+`;
+
+const Bottom= styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const Info= styled.div`
+    flex:3;
 `;
 
 
-const Navbar = () => {
+const Summary= styled.div`
+    flex:1;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+`;
+
+const SummaryTitle = styled.h1`
+    font-weight: 200;
+`;
+
+const SummaryItem = styled.div`
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+`;
+
+const SummaryItemPrice = styled.span`
+
+`;
+
+const SummaryItemText = styled.span`
+
+`;
+
+const SummaryButton = styled.button`
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+`;
+
+const ShoppinCart = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
@@ -114,7 +136,6 @@ const Navbar = () => {
   const logout = async () => {
     await signOut(auth);
   };
-
   function GetUserUid(){
     const[uid, setUid] = useState(null);
     useEffect(() => {
@@ -127,26 +148,11 @@ const Navbar = () => {
     return uid;
   }
 
-  function GetUserEmail(){
-    const[mail, setMail] = useState(null);
-    useEffect(() => {
-      auth.onAuthStateChanged(user =>{
-        if(user){
-          setMail(user.email);
-        }
-      })
-    }, [])
-    return mail;
-  }
-
-  const mail = GetUserEmail();
   const uid = GetUserUid();
-  const ref = firebase.firestore().collection('Cart ' + uid) 
-
-
+  const ref = firebase.firestore().collection('Cart ' + uid)
 
   const [data, setdata] = useState([])
-  const [loader, setloader] = useState(true)
+  const [loader, setloader] = useState(false)
   const [name, setName] = useState("")
 
   function createDoc(newDataObj){
@@ -160,19 +166,20 @@ const Navbar = () => {
   }
 
   function getData(){
-    ref.onSnapshot((querySnapshot) => {
+    firebase.firestore().collection('Cart ' + uid).onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
         items.push(doc.data())
       })
       setdata(items)
       setloader(false)
+      console.log(loader)
     })
   }
 
   function deleteDoc(){
     {loader === false && (data.map((product) => (
-        ref
+        firebase.firestore().collection('Cart ' + uid)
         .doc(product.id)
         .delete()
     )))}
@@ -181,29 +188,34 @@ const Navbar = () => {
 
   useEffect(() => {
     getData()
-  }, []) 
+  }, [])
 
-
-  const value = {
-    loggedHidden
-  }
+ 
   return (
-    <Container>
-       <Wrapper>
-           <Left>
-               <Language>HR</Language>
-           </Left>
-           <Center><Link style={{textDecoration: 'none'}} to = "/"><Logic>CimerFraj</Logic></Link></Center>
-           <Right>
-           <Link style={{textDecorationColor: 'black'}} to = "/login" hidden={!loggedHidden}><MenuItem>PRIJAVI SE</MenuItem></Link>
-           <Link style={{textDecorationColor: 'black'}} to = "/register" hidden={!loggedHidden}><MenuItem>REGISTRIRAJ SE</MenuItem></Link>
-           <div hidden={loggedHidden}>{mail}</div>
-           <Link style={{textDecorationColor: 'black'}} to = "/cart" hidden={loggedHidden}><MenuItem>KOŠARICA</MenuItem></Link>
-           <Link style={{textDecorationColor: 'black'}} to = "/" hidden={loggedHidden} onClick={logout}><MenuItem>ODJAVI SE</MenuItem></Link>
-           </Right>
-       </Wrapper>
-    </Container >
+    <div>
+        <Navbar/>
+        <Container>
+        <Wrapper>
+            <Title>
+                TVOJA KOŠARICA
+            </Title>
+            <Top>
+                <Link to ='/'><TopButton>NASTAVI KUPNJU</TopButton></Link>
+
+            </Top>
+            <Bottom>
+                <Info>
+                {loader === false && (data.map((product) => (
+                        <CartItem key={product.id} product={product}/>
+                    )))}
+                </Info>
+            </Bottom>
+            <Link to = '/done'><SummaryButton onClick={() => deleteDoc()}>NARUČI</SummaryButton></Link>
+        </Wrapper>
+   </Container>
+      <Footer/>
+    </div>
   )
 }
 
-export default Navbar
+export default ShoppinCart

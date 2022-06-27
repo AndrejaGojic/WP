@@ -1,13 +1,15 @@
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import  Kitchen  from "./pages/Kitchen";
+import Kitchen  from "./pages/Kitchen";
 import Kids from "./pages/Kids";
 import BathRoom from "./pages/BathRoom"
 import BedRoom from "./pages/BedRoom"
 import DiningRoom from "./pages/DiningRoom"
 import LivingRoom from "./pages/LivingRoom"
 import Bravo from "./pages/Bravo";
+import DoneShopping from "./pages/DoneShopping";
+import ShoppinCart from "./pages/ShoppinCart";
 import SingleProduct from "./pages/SingleProduct";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
@@ -81,10 +83,11 @@ function App() {
                 <Route path='/diningroom' element= {<DiningRoom/>}/>
                 <Route path='/livingroom' element= {<LivingRoom/>}/>
                 <Route path='/bravo' element= {<Bravo/>}/>
+                <Route path='/done' element= {<DoneShopping/>}/>
                 <Route path="/product/:id" element={<SingleProduct/>}/>
+                <Route path="/cart" element={<ShoppinCart/>}/>
         </Routes>
-        <h4> User Logged In: </h4>
-      {user?.email}
+        
       
       
       </div>

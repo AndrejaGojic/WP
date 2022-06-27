@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Home from "./Home";
 
 import React, { useState, useEffect, useContext } from "react";
 
@@ -11,6 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../fire";
+import { color } from "@mui/system";
 
 const Container = styled.div`
     width: 100vw;
@@ -40,7 +40,7 @@ const Title = styled.h1`
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
-  margin: 10px 0;
+  margin: 10px 5px;
   padding: 10px;
 `;
 
@@ -51,8 +51,15 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
   margin-bottom: 10px;
   `;
+
+const Text = styled.div`
+      margin-top: 10px;
+      margin-left: 5px;
+`;
 
 
 const AuthContext = React.createContext();
@@ -72,6 +79,8 @@ function Login() {
 
   const [loggedHidden, setLoggedHidden] = useState();
   const [user, setUser] = useState({});
+  const [error, setError] = useState(null);
+  const [errorHidden, setErrorHidden] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -107,9 +116,13 @@ function Login() {
         loginPassword
       );
       console.log(user);
+      setErrorHidden(true);
     } catch (error) {
+      setErrorHidden(false);
       console.log(error.message);
+      setError(error.message);
     }
+    console.log(errorHidden);
   };
 
   const logout = async () => {
@@ -124,7 +137,7 @@ function Login() {
       <div>
         <Container>
         <Wrapper>
-          <Title> Login </Title>
+          <Title> Prijavi se </Title>
               <Input
                 placeholder="Email..."
                 onChange={(event) => {
@@ -132,18 +145,16 @@ function Login() {
                 }}
               />
               <Input
+                type="password"
                 placeholder="Password..."
                 onChange={(event) => {
                   setLoginPassword(event.target.value);
                 }}
               />
-
-              <Button onClick={login}> <Link style={{textDecoration: 'none'}} to = "/">Prijavi se</Link></Button>
-
-            <h4> User Logged In: </h4>
-            {user?.email}
-
-            <Button onClick={logout}>Odjavi se</Button>
+        <Button onClick={login} hidden={!errorHidden}>Prijavi se</Button>
+        <Link to = "/" ><Button onClick={login} hidden={errorHidden}> Prijavi se</Button></Link>
+        <div>{error}</div>
+        <Text><Link to ="/register">Keiraj novi račun</Link></Text>
         </Wrapper>
         </Container>
               

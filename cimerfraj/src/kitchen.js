@@ -1,0 +1,50 @@
+export const kitchen = [
+    {
+        id: "jsah3828-glt3uJCAB_jfi3",
+        name: "LAGAN ugradbena pećnica",
+        price: 1149,
+        description: "90x80x60 cm",
+        img: "https://www.ikea.com/hr/hr/images/products/lagan-ugradbena-pecnica-bijela__0754889_pe748157_s5.jpg?f=s",
+        category: "kitchen",
+    },
+    {
+        id: "kjdsaoH_kgtoDS893-JFFHkc2",
+        name: "Faber Flexa napa",
+        price: 749,
+        description: "100x80x30 cm",
+        img: "https://cdn5.elipso.hr/elipsowebmedia/images/xbig/148581.jpg",
+        category: "kitchen",
+    },
+    {
+        id: "JFB84gn6k74-qhuau",
+        name: "GORENJE K5121WD štednjak",
+        price: 2400,
+        description: "100x80x50 cm",
+        img: "https://cdn5.elipso.hr/elipsowebmedia/images/full/C_129975.jpg",
+        category: "kitchen",
+    },
+    {
+        id: "9uvj-498qzvHVH",
+        name: "EKO FSE64320DS samostojeći štednjak",
+        price: 3200,
+        description: "110x90x40 cm",
+        img: "https://cdn5.elipso.hr/elipsowebmedia/images/xbig/148758.jpg",
+        category: "kitchen",
+    },
+    {
+        id: "JNAKVN90-vkbqij",
+        name: "FABER Strip Smart napa",
+        price: 1799,
+        description: "90x40x20 cm",
+        img: "https://cdn5.elipso.hr/elipsowebmedia/images/xbig/127911.jpg",
+        category: "kitchen",
+    },
+    {
+        id: "ks.596gmvk.rqofi9rfj",
+        name: "Pećnica ugradbena Indesit IFW 6544 IX",
+        price: 1699,
+        description: "110x60x50 cm",
+        img: "https://cdn.sancta-domenica.hr/media/catalog/product/cache/f5919dfc2358b0859fbea71e815269bc/2/0/2021-07-27_095517.jpg",
+        category: "kitchen",
+    }
+];

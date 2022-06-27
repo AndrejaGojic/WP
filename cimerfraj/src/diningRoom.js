@@ -1,0 +1,50 @@
+export const diningRoom= [
+    {
+        id: "jsah38283uJCAB",
+        name: "STOL ZA BLAGOVAONICU hrast Artisan",
+        price: 1999,
+        description: "180x70x90 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIHCufrfYhqpvCUGwQ8fjjBQ/?fmt=auto&w=768&h=0&upscale=false",
+        category: "diningRoom",
+    },
+    {
+        id: "kjdsaoHDS893",
+        name: "STOL ZA BLAGOVAONICU bijela drvni materijal",
+        price: 1299,
+        description: "120x75x80 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIdvKpI1Qi6ENaZA1uUYVaIw/?fmt=auto&w=768&h=0&upscale=false",
+        category: "diningRoom",
+    },
+    {
+        id: "JFB8474-qhuaujg5",
+        name: "STOL ZA BLAGOVAONICU boje hrasta ",
+        price: 1899,
+        description: "160x76x90 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIUkXNa02iuZwN63bDJB304g/?fmt=auto&w=768&h=0&upscale=false",
+        category: "diningRoom",
+    },
+    {
+        id: "9uv9qj-498qzvHrbVH",
+        name: "VITRINA staklo, drvni materijal ",
+        price: 3099,
+        description: "111x209x43 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIAS0FjBKzTIZ1xNA_vEJw3g/?fmt=auto&w=768&h=0&upscale=false",
+        category: "diningRoom",
+    },
+    {
+        id: "JNAKVN90R4-vkbq76ij",
+        name: "BARSKA STOLICA crna metal",
+        price: 699,
+        description: "47x82x52  cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIsIVo7DLT1IonR15Spr2v1w/?fmt=auto&w=768&h=0&upscale=false",
+        category: "diningRoom",
+    },
+    {
+        id: "ks.,mvk.rqofi9rf",
+        name: "BAR natur, crna drvo",
+        price: 3499,
+        description: "90x102x75 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIXwGd_S3pXu0qUwE28OXhyQ/?fmt=auto&w=768&h=0&upscale=false",
+        category: "diningRoom",
+    }
+];

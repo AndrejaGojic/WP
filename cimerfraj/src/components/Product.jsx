@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Container = styled.div`
     flex: 1;
     margin: 5px;
-    height 70vh;
+    height 85vh;
     position: relative;
     cursor: pointer;
     border-style: ridge;
@@ -52,7 +52,7 @@ const Product = ({item}) => {
                 <Info>
                     <Title>{item.name}</Title>
                     <Desc>{item.description}</Desc>
-                    <Price>{item.price}</Price>
+                    <Price>{item.price+" kn"}</Price>
                 </Info>
             </Container>
             </Link>

@@ -1,0 +1,50 @@
+export const kids= [
+    {
+        id: "jsah38283uJCAB_jfi3gjt5",
+        name: "PISAĆI STOL boje bagrema",
+        price: 3999,
+        description: "90x76x55 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PI15PYuZnZRlF-k_h6_M5xSQ/?fmt=auto&w=768&h=0&upscale=false",
+        category: "kids",
+    },
+    {
+        id: "kjdsaoHDS893-JFFHkc2_Ft",
+        name: "SOBA ZA MLADE bijela",
+        price: 5999,
+        description: "300x250 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIi_N7VnLkTTTOJGBpHBcbsA/?fmt=auto&w=768&h=0&upscale=false",
+        category: "kids",
+    },
+    {
+        id: "JFB8474-qhujggtau",
+        name: "DJEČJA STOLICA",
+        price: 799,
+        description: "40x85x32 cm",
+        img: "https://www.zondo.hr/images/Artium/Kancelarske_stolicky/Artium_ka_2325_pink_a.jpg",
+        category: "kids",
+    },
+    {
+        id: "9uv9qj-498qzvHVH53",
+        name: "TROSJED NA RAZVLAČENJE",
+        price: 5864,
+        description: "200x91x92 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PI9Yt-MjyE-vTs8U3CsEPebg/?fmt=auto&w=768&h=0&upscale=false",
+        category: "kids",
+    },
+    {
+        id: "JNAKVN90R4-vkbqirklj",
+        name: "VREĆA ZA SJEDENJE tekstil",
+        price: 499,
+        description: "50x40x110  cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIiGaXf1SxJ639lKGN8_RXBA/?fmt=auto&w=768&h=0&upscale=false",
+        category: "kids",
+    },
+    {
+        id: "ks.,mvk.rqofi9rfjkgjp6",
+        name: "VISOKI ELEMENT bijela",
+        price: 399,
+        description: "72x36x37 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIOBVdKSL8xo8STgWmd44KEQ/?fmt=auto&w=768&h=0&upscale=false",
+        category: "kids",
+    }
+];

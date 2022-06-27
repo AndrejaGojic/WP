@@ -1,0 +1,50 @@
+export const bedroom= [
+    {
+        id: "jsah38283uJCAB_jci3",
+        name: "xora Krevet",
+        price: 4400,
+        description: "185x94x218 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PI5PEYJCFs4WaOZz6tuzW98g/?fmt=auto&w=768&h=0&upscale=false",
+        category: "bedroom",
+    },
+    {
+        id: "kjdsaoHDS893-JFFHc2",
+        name: "HOM'in krevet",
+        price: 1499,
+        description: "120x200 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIImdJ66XyV3SWOMGjc5RkUA/?fmt=auto&w=768&h=0&upscale=false",
+        category: "bedroom",
+    },
+    {
+        id: "JFB2474-qhuau",
+        name: "ZIDNI KREVET",
+        price: 3500,
+        description: "90x200 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIA7to3tbX5q2mNwHFvyNKPA/?fmt=auto&w=768&h=0&upscale=false",
+        category: "bedroom",
+    },
+    {
+        id: "9uv9qj-498qzvHXH",
+        name: "novel BOXSPRING KREVET ",
+        price: 11999,
+        description: "160x200 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIPJ5eLQKCUKWCEyGHpZE8sg/?fmt=auto&w=768&h=0&upscale=false",
+        category: "bedroom",
+    },
+    {
+        id: "JNAKVN90R4-vkbqj",
+        name: "HOM'IN BOXSPRING KREVET",
+        price: 9499,
+        description: "160x105x200  cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIVqQ7g5oGxVrxXFLX-_MxSg/?fmt=auto&w=768&h=0&upscale=false",
+        category: "bedroom",
+    },
+    {
+        id: "ks.,mvk.rqofi10rfj",
+        name: "BOX KREVET BEZ OPRUGA",
+        price: 3400,
+        description: "160x200 cm",
+        img: "https://media.xxxlutz.com/i/xxxlutz/PIH9K4X5pqdthIooBhxkRCMw/?fmt=auto&w=768&h=0&upscale=false",
+        category: "bedroom",
+    }
+];

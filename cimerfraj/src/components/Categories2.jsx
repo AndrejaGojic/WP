@@ -7,7 +7,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 
 
 
-const Categories = () => {
+const Categories2 = () => {
   return (
     <div>
 <Container>
@@ -30,4 +30,4 @@ const Categories = () => {
   )
 }
 
-export default Categories
+export default Categories2

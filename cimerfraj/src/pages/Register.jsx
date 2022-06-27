@@ -128,7 +128,7 @@ const Button = styled.button`
               <Input placeholder ='E-mail adresa'  onChange={(event) => {
             setRegisterEmail(event.target.value);
           }}/>
-              <Input placeholder ='Lozinka'   onChange={(event) => {
+              <Input type="password" placeholder ='Lozinka'   onChange={(event) => {
             setRegisterPassword(event.target.value);
           }}/>
               
@@ -137,8 +137,6 @@ const Button = styled.button`
               Kreitanjem ovog računa, suglasan/a sam s korištenjem mojih podataka u skladu s <b>POLITIKOM PRIVATNOSTI</b>
           </Agreement>
           <Button onClick={register}><Link to = "/bravo">KREIRAJ</Link></Button>
-          <Button onClick={logout}> Odjavi se </Button>
-          <Link to="/login">Logiraj se</Link>
           
       </Wrapper>
     </Container>

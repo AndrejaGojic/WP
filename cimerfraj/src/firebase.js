@@ -1,16 +1,10 @@
-// Import the functions you need from the SDKs you need
-import { getAnalytics } from "firebase/analytics";
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/storage';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+const firebaseConfig2 = {
   apiKey: "AIzaSyCq7B5fvJhyzRQMgQW7yeA-EuaGrT_7QxA",
   authDomain: "cimerfraj-1f11c.firebaseapp.com",
+  databaseURL: "https://cimerfraj-1f11c-default-rtdb.firebaseio.com",
   projectId: "cimerfraj-1f11c",
   storageBucket: "cimerfraj-1f11c.appspot.com",
   messagingSenderId: "162698954806",
@@ -18,12 +12,8 @@ const firebaseConfig = {
   measurementId: "G-22P71NDP76"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-firebase.initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig2)
+const fs = firebase.firestore();
 
-const db = firebase.firestore();
-const storage = firebase.storage();
-
-export {db, storage}
+export {fs};
+export default firebase;
